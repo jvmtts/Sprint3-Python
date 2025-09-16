@@ -1,9 +1,12 @@
+from arquivos import *
+
 def mostrar_menu():
     print("\nMenu Estatísticas Futebol Feminino")
     print("1 - Ver batimento cardíaco de uma jogadora")
     print("2 - Ver desempenho em campo de uma jogadora")
     print("3 - Ver estatísticas de gols de uma jogadora")
     print("4 - Listar todas as jogadoras")
+    print("5 - Adicionar nova jogadora")
     print("0 - Sair")
 
 def escolher_jogadora(jogadoras):
@@ -49,3 +52,24 @@ def listar_jogadoras(jogadoras):
     print("\n--- Lista de Jogadoras ---")
     for jogadora in jogadoras:
         print(f"- {jogadora['nome']}")
+
+def adicionar_jogadora(jogadoras):
+    nome = input("Nome da jogadora: ")
+    batimentos = int(input("Batimentos cardíacos (bpm): "))
+    distancia = float(input("Distância percorrida (km): "))
+    velocidade = float(input("Velocidade média (km/h): "))
+    jogos = int(input("Número de jogos: "))
+    gols = int(input("Número de gols: "))
+
+    nova_jogadora = {
+        "nome": nome,
+        "batimentos": batimentos,
+        "desempenho": {
+            "distancia_percorrida_km": distancia,
+            "velocidade_media_kmh": velocidade
+        },
+        "estatisticas_gols": [jogos, gols]
+    }
+    jogadoras.append(nova_jogadora)
+    adicionar_arquivo(jogadoras)
+    print(f"Jogadora {nome} adicionada com sucesso!")

@@ -1,0 +1,1 @@
+jogadoras = ler_arquivo()
