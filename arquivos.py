@@ -9,3 +9,4 @@ def ler_arquivo():
 def adicionar_arquivo(dados):
     with open('jogadoras.json', 'w') as arq:
         json.dump(dados, arq)
+    return True
