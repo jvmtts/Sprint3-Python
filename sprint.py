@@ -1,7 +1,26 @@
 from funcoes import *
-from arquivos import *
+import os
 
-jogadoras = ler_arquivo()
+jogadoras = [
+    {
+        "nome": "Andressa Alves",
+        "batimentos": 70,
+        "desempenho": {  
+            "distancia_percorrida_km": 10,
+            "velocidade_media_kmh": 15
+        },
+        "estatisticas_gols": (28, 15)
+    },
+    {
+        "nome": "Dayana Rodríguez",
+        "batimentos": 68,
+        "desempenho": {
+            "distancia_percorrida_km": 5,
+            "velocidade_media_kmh": 12
+        },
+        "estatisticas_gols": (30, 5)
+    }
+    ]
 
 while True:
     mostrar_menu()
@@ -17,6 +36,8 @@ while True:
         listar_jogadoras(jogadoras)
     elif opcao == "5":
         adicionar_jogadora(jogadoras)
+    elif opcao == "6":
+        os.system("cls")
     elif opcao == "0":
         print("Encerrando... Obrigado por usar o Passa a Bola!")
         break

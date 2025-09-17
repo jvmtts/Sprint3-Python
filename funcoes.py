@@ -1,5 +1,3 @@
-from arquivos import *
-
 def mostrar_menu():
     print("\nMenu Estatísticas Futebol Feminino")
     print("1 - Ver batimento cardíaco de uma jogadora")
@@ -7,6 +5,7 @@ def mostrar_menu():
     print("3 - Ver estatísticas de gols de uma jogadora")
     print("4 - Listar todas as jogadoras")
     print("5 - Adicionar nova jogadora")
+    print("6 - Limpar Terminal")
     print("0 - Sair")
 
 def escolher_jogadora(jogadoras):
@@ -71,5 +70,4 @@ def adicionar_jogadora(jogadoras):
         "estatisticas_gols": [jogos, gols]
     }
     jogadoras.append(nova_jogadora)
-    adicionar_arquivo(jogadoras)
     print(f"Jogadora {nome} adicionada com sucesso!")
